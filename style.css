@@ -1,0 +1,100 @@
+/* Đặt các thuộc tính cơ bản cho trang */
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Căn chỉnh và thiết kế container chính */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Thiết kế cho tiêu đề chính */
+h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #444;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+
+.container2 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.item {
+    text-align: center;
+    margin: 10px;
+}
+
+.item img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 200px;
+    width: auto;
+}
+
+.item p {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #555;
+    font-style: italic;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+   
+    color: #fff;
+}
+.logo {
+    width: 150px; 
+   
+   
+}
+
