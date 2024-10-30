@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ - Công Nghệ</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            padding-top: 56px; /* Đảm bảo navbar không chồng lên nội dung */
+            background-color: #f8f9fa; /* Màu nền cho trang */
+        }
+
+        .hero-section {
+            background: url('https://via.placeholder.com/1200x400') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            transition: background-color 0.5s ease; /* Hiệu ứng chuyển màu nền */
+        }
+
+        .hero-section:hover {
+            background-color: rgba(0, 0, 0, 0.5); /* Hiệu ứng khi di chuột qua */
+        }
+
+        .content-box {
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s ease, border-color 0.3s ease; /* Hiệu ứng chuyển đổi */
+            cursor: pointer; /* Đổi con trỏ thành tay khi hover */
+        }
+
+        .content-box:hover {
+            transform: scale(1.05); /* Phóng to khi di chuột qua */
+            border-color: #58a6ff; /* Đổi màu viền */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền footer */
+        }
+
+        footer:hover {
+            background-color: #444; /* Hiệu ứng khi di chuột qua footer */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Trang Công Nghệ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cv">Lý Lịch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Sản Phẩm</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <h1>Chào Mừng Đến Với Trang Công Nghệ</h1>
+        <p>Khám phá những bài viết, lý lịch nghề nghiệp, và các sản phẩm nổi bật.</p>
+        <button class="btn btn-primary">Tìm Hiểu Thêm</button>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="container main-layout">
+        <div class="row">
+            <div class="col-md-4">
+                <section id="blog" class="content-box" onclick="location.href='blog.html';">
+                    <h2>Blog Công Nghệ</h2>
+                    <p>Cập nhật các bài viết mới nhất về xu hướng công nghệ.</p>
+                </section>
+            </div>
+            <div class="col-md-4">
+                <section id="cv" class="content-box" onclick="location.href='cv.html';">
+                    <h2>Lý Lịch Nghề Nghiệp</h2>
+                    <p>Xem hồ sơ và quá trình làm việc của chúng tôi.</p>
+                </section>
+            </div>
+            <div class="col-md-4">
+                <section id="products" class="content-box" onclick="location.href='products.html';">
+                    <h2>Sản Phẩm Nổi Bật</h2>
+                    <p>Tìm hiểu về các sản phẩm công nghệ chúng tôi đã thực hiện.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Trang Công Nghệ. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        $(document).ready(function () {
+            console.log("Trang web đã tải thành công");
+            $('.nav-link').hover(function () {
+                $(this).css('color', '#58a6ff');
+            }, function () {
+                $(this).css('color', '');
+            });
+        });
+    </script>
+</body>
+</html>

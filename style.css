@@ -1,0 +1,146 @@
+/* Import font Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    transition: background-color 0.5s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #58a6ff;
+}
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+    color: #39d353;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #1f4037, #99f2c8);
+    height: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    animation: fadeIn 1.5s ease;
+}
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+.hero-section button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #58a6ff;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+.hero-section button:hover {
+    background-color: #39d353;
+    cursor: pointer;
+}
+
+/* Main Layout */
+.main-layout {
+    padding: 60px 40px;
+}
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Content Box Styling */
+.content-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.content-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+.content-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #58a6ff;
+}
+.content-box p {
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(15, 15, 15, 0.95);
+    text-align: center;
+    padding: 20px;
+    color: #8b949e;
+    margin-top: 30px;
+    font-size: 1rem;
+    border-top: 1px solid #2f333a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .grid-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+}

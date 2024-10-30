@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Trang Công Nghệ</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script> 
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      padding-top: 56px; /* Đảm bảo navbar không chồng lên nội dung */
+    }
+
+    .card {
+      margin-bottom: 20px;
+      transition: transform 0.3s ease; /* Hiệu ứng chuyển đổi cho thẻ */
+    }
+
+    .card:hover {
+      transform: scale(1.05); /* Phóng to khi di chuột qua */
+    }
+
+    .card-content {
+      display: none; /* Ẩn nội dung bài viết */
+      transition: max-height 0.3s ease; /* Hiệu ứng chuyển đổi cho nội dung */
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    .card-header {
+      cursor: pointer; /* Chỉ báo có thể nhấp chuột */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Trang Công Nghệ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Trang Chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#blog">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cv">Lý Lịch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#products">Sản Phẩm</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Section -->
+  <div class="container mt-5">
+    <h2>Blog Công Nghệ</h2>
+    <div id="blog-posts">
+      <!-- Bài viết sẽ được thêm vào đây thông qua JavaScript -->
+    </div>
+
+    <button class="btn btn-primary" id="addPostBtn">Thêm Bài Viết</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Trang Công Nghệ. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script>
+    $(document).ready(function () {
+      const posts = [
+        { title: 'Bài viết 1', content: 'Nội dung bài viết 1...' },
+        { title: 'Bài viết 2', content: 'Nội dung bài viết 2...' },
+        { title: 'Bài viết 3', content: 'Nội dung bài viết 3...' },
+      ];
+
+      function renderPosts() {
+        $('#blog-posts').empty(); // Xóa nội dung cũ
+        posts.forEach((post, index) => {
+          $('#blog-posts').append(`
+            <div class="card">
+              <div class="card-header" data-index="${index}">
+                ${post.title}
+              </div>
+              <div class="card-body card-content">
+                ${post.content}
+                <button class="btn btn-danger btn-sm float-end delete-post">Xóa</button>
+              </div>
+            </div>
+          `);
+        });
+      }
+
+      // Hiển thị nội dung khi nhấp vào tiêu đề
+      $(document).on('click', '.card-header', function () {
+        const index = $(this).data('index');
+        const content = $(this).next('.card-body');
+        
+        // Toggle nội dung
+        content.toggle();
+        content.css('max-height', content.is(':visible') ? content[0].scrollHeight + 'px' : '0');
+      });
+
+      // Xóa bài viết
+      $(document).on('click', '.delete-post', function () {
+        const index = $(this).closest('.card').find('.card-header').data('index');
+        posts.splice(index, 1); // Xóa bài viết khỏi mảng
+        renderPosts(); // Render lại danh sách bài viết
+      });
+
+      // Thêm bài viết mới
+      $('#addPostBtn').on('click', function () {
+        const newTitle = prompt('Nhập tiêu đề bài viết:');
+        const newContent = prompt('Nhập nội dung bài viết:');
+        if (newTitle && newContent) {
+          posts.push({ title: newTitle, content: newContent }); // Thêm bài viết mới
+          renderPosts(); // Render lại danh sách bài viết
+        }
+      });
+
+      renderPosts(); // Hiển thị bài viết ban đầu
+    });
+  </script>
+</body>
+</html>
